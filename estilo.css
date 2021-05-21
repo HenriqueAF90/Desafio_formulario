@@ -1,0 +1,42 @@
+/* Alteração da cor de fundo de todo o corpo do site e fonte*/
+body {
+    background-color: rgb(216, 216, 223);
+    text-align: center;
+    padding: 5%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.formulario {
+    display: flex;
+    justify-content: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    flex-wrap: wrap;
+}
+#dadosform {
+    width: 50%;
+}
+label {
+    float: left;
+    width: 5cm;
+    margin-right: 8px;
+    text-align: right;
+} 
+/*Inserindo apenas formatação em input´s do tipo text e */
+input[type='text'], input[type='tel'], input[type='email'] {
+    width: 50%;
+}
+select {
+    width: 50%;
+}
+.campo {
+    margin: 12px;
+    font-size: 14px;
+}
+.linkcep {
+    margin-left: 14%;
+    margin-top: 5px;
+    font-size: 10px;
+}
+p {
+    font-style: italic;
+}

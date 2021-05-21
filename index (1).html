@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css" />
+    <title>Formulário de cadastro</title>
+
+</head>
+
+<body>
+    <div class="titulo">
+        <h1> Cadastro Pessoal</h1>
+    </div>
+    <div class="formulario">
+        <form id="dadosform" method="get" action=".">
+            <div>
+                <p>Preencha o formulário com seus dados</p>
+            </div>
+            <div class="campo">
+                <label for="nome"> *Nome Completo: </label>
+                <input type="text" pattern="[A-Za-z]+" id="nome" name="Insira seu nome" placeholder="Digite seu nome"
+                    required />
+            </div>
+            <div class="campo">
+                <label for="cpf"> *CPF: </label>
+                <input type="text" id="cpf" name="Insira seu cpf" onkeyup="checarCpf(this)" placeholder="Apenas números"
+                    onkeydown="javascript: Mascara(this,vCpf);" required />
+                <div>
+                    <span id="cpfResponse"></span>
+                </div>
+            </div>
+            <div class="campo">
+                <label for="rg"> RG: </label>
+                <input type="text" id="rg" maxlength="8" name="Insira número do documento de identidade"
+                    placeholder="Apenas números" />
+            </div>
+            <div class="campo">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="Insira seu e-mail" placeholder="exemplo@email.com" />
+            </div>
+            <div class="campo">
+                <label for="sexo"> Sexo </label>
+                <select name="Informe seu sexo">
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                    <option value="outros">Outros</option>
+                    <option value="Não declarar"> Não declarar</option>
+                </select>
+            </div>
+            <div class="campo">
+                <label for="cep">CEP:</label>
+                <input type="text" name="informe seu CEP" id="cep" placeholder="00000-000" maxlength="8"
+                    onblur="pesquisacep(this.value);" />
+                <div class="linkcep">
+                    <a href="http://www.buscacep.correios.com.br/sistemas/buscacep/buscaCepEndereco.cfm"
+                        target="_blank"><button type="button"> Não sei o CEP</button></a>
+                </div>
+            </div>
+            <div class="campo">
+                <label for="endereco"> *Endereço:</label>
+                <input type="text" id="endereco" name="Informe seu endreço" placeholder="Digite seu endereço"
+                    required />
+            </div>
+            <div class="campo">
+                <label for="numero">*Número:</label>
+                <input type="text" id="numero" name="Informe o número da residência" placeholder="Número" />
+            </div>
+            <div class="campo">
+                <label for="bairro">Bairro:</label>
+                <input type="text" id="bairro" name="Informe seu bairro" placeholder="Bairro" />
+            </div>
+            <div class="campo">
+                <label for="cidade"> Cidade:</label>
+                <input type="text" id="cidade" name="Informe a cidade" placeholder="Cidade" />
+            </div>
+            <div class="campo">
+                <label for="estado">Estado:</label>
+                <input type="text" id="uf" name="Informe UF" maxlength="2" placeholder="" />
+
+            </div>
+            <div class="campo">
+                <label for="telfixo"> Telefone Fixo:</label>
+                <input type="tel" name="Informe seu telefone fixo" inputmode="telefoneFixo" maxlength="10"
+                    placeholder="Digite seu telefone" />
+            </div>
+            <div class="campo">
+                <label for="celular">*Telefone Celular:</label>
+                <input type="tel" name="Informe seu telefone celular" id="telefoneCelular" maxlength="11"
+                    placeholder="Digite seu celular" required />
+            </div>
+            <div>
+                <p>* Campos obrigatórios</p>
+            </div>
+            <div>
+                <button type="submit" onclick="validar()"> Cadastrar</button>
+                <button type="reset">Limpar</button>
+            </div>
+    </div>
+    </form>
+    <script src="logica.js"></script>
+</body>
+
+</html>
